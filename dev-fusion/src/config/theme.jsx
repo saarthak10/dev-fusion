@@ -51,6 +51,24 @@ theme = createTheme(theme,{
         },
         h8:{
             fontSize:'0.7rem'
+        },
+        labelLarge:{
+            fontStyle: 'normal',
+            fontWeight: '700',
+    
+    // wordWrap: 'break-word',
+            [theme.breakpoints.up('xs')]: {
+                fontSize: '20px'
+            },
+            [theme.breakpoints.up('sm')]: {
+            fontSize: '24px'
+            },
+            [theme.breakpoints.up('md')]: {
+            fontSize: '24px'
+            },
+            [theme.breakpoints.up('lg')]: {
+            fontSize: '30px'
+            }
         }
     }
 })
