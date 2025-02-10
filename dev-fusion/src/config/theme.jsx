@@ -1,5 +1,5 @@
 import {createTheme} from "@mui/material"
-import {green,grey} from "@mui/material/colors"
+import {grey} from "@mui/material/colors"
 
 
 let theme = createTheme({
@@ -19,7 +19,7 @@ let theme = createTheme({
             main: grey[900]
         },
         green:{
-            main: green[800]
+            main: "#67E6AE"
         }
     }
 
@@ -28,8 +28,12 @@ let theme = createTheme({
 
 theme = createTheme(theme,{
     typography:{
+        fontFamily:[
+            'DmSans'
+        ],
         link:{
             fontSize: '0.8rem',
+            fontFamily:'DmSans',
             [theme.breakpoints.up('md')]:{
                 fontSize:'0.9rem'
             },
@@ -53,9 +57,8 @@ theme = createTheme(theme,{
             fontSize:'0.7rem'
         },
         labelLarge:{
-            fontStyle: 'normal',
             fontWeight: '700',
-    
+            fontFamily:'DmSans',    
     // wordWrap: 'break-word',
             [theme.breakpoints.up('xs')]: {
                 fontSize: '20px'
@@ -68,6 +71,23 @@ theme = createTheme(theme,{
             },
             [theme.breakpoints.up('lg')]: {
             fontSize: '30px'
+            }
+        },
+        extraLarge:{
+            fontWeight: '700',
+            fontFamily:'DmSans',    
+    // wordWrap: 'break-word',
+            [theme.breakpoints.up('xs')]: {
+                fontSize: '18px'
+            },
+            [theme.breakpoints.up('sm')]: {
+            fontSize: '22px'
+            },
+            [theme.breakpoints.up('md')]: {
+            fontSize: '50px'
+            },
+            [theme.breakpoints.up('lg')]: {
+            fontSize: '40px'
             }
         }
     }

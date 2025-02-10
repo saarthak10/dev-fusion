@@ -1,8 +1,8 @@
 import { Box, Grid2, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
-import linkdIcon from '../../assets/linkdinIcon.svg'
-import githubIcon from '../../assets/github.svg'
-import profileImage from '../../assets/profile.jpeg'
+import linkdIcon from '../../assets/icons/linkdinIcon.svg'
+import githubIcon from '../../assets/icons/github.svg'
+import profileImage from '../../assets/icons/profile.jpeg'
 import theme from '../../config/theme'
 
 const Home = () => {
@@ -10,7 +10,10 @@ const Home = () => {
   const data = {
     username:'Saarthak Sharma',
     website:'www.google.com',
-    role: 'Software Engineer'
+    role: 'Software Engineer',
+    technology:'Front-end Developer',
+    intro: 'Front-end Developer crafting web and mobile solutions with React and Android.',
+    yearsOfExperience:'3.8'
   }
   return (
       <Box   sx={{ marginLeft:'50px', backgroundColor:`${theme.palette.secondary.main}`, borderTopLeftRadius:'40px'}} display='flex' flexDirection='column' alignItems='center' padding={10}>
@@ -31,14 +34,34 @@ const Home = () => {
         </Grid2>
 
         <Grid2 container bgcolor={theme.palette.primary.main}  borderRadius='20px' width='80%' padding={4}>
-          <Grid2 item >
-              <Box component='img' src={profileImage} mt={4} />
+          <Grid2 item size={{xs:12, md:4}} display={'flex'} flexDirection={'column' } >
+              <img src={profileImage} style={{border:'1px solid transparent', borderRadius:'10px'}}/> 
               <Typography variant='h6' fontWeight= 'bold' textAlign='center' mt={3} >
                 {data?.username}
               </Typography>
               <Typography textAlign='center'>
                 {data?.role}
               </Typography>
+          </Grid2>
+          <Grid2 item size={{xs:12, md:8}} padding={{xs:2,md:4, lg:4}} >
+            <Typography variant='extraLarge'>Hello, I&apos;m <Typography component={'span'} variant='extraLarge' color={theme.palette.green.main}>{data?.username}</Typography> </Typography>
+            <Typography variant='extraLarge'>{data?.intro}</Typography>
+            <Box sx={{display:'flex', }}>
+              <Typography variant='extraLarge'>
+                {data?.yearsOfExperience}
+              </Typography>
+              <Box>
+                <Typography >
+                  Years
+                </Typography>
+                <Typography>
+                  of
+                </Typography>
+                <Typography>
+                  Experience
+                </Typography>
+              </Box>
+            </Box>
           </Grid2>
         </Grid2>
 
