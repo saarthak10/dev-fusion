@@ -56,6 +56,16 @@ theme = createTheme(theme,{
         h8:{
             fontSize:'0.7rem'
         },
+        labelSmall:{
+            fontWeight: '700',
+            fontFamily:'DmSans', 
+            [theme.breakpoints.up('xs')]: {
+                fontSize: '0.8rem'
+            },
+            [theme.breakpoints.up('sm')]: {
+            fontSize: '0.6rem'
+            }
+        },
         labelLarge:{
             fontWeight: '700',
             fontFamily:'DmSans',    
@@ -76,7 +86,7 @@ theme = createTheme(theme,{
         extraLarge:{
             fontWeight: '700',
             fontFamily:'DmSans',    
-    // wordWrap: 'break-word',
+            // wordWrap: 'break-word',
             [theme.breakpoints.up('xs')]: {
                 fontSize: '18px'
             },

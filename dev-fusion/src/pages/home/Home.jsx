@@ -46,18 +46,18 @@ const Home = () => {
           <Grid2 item size={{xs:12, md:8}} padding={{xs:2,md:4, lg:4}} >
             <Typography variant='extraLarge'>Hello, I&apos;m <Typography component={'span'} variant='extraLarge' color={theme.palette.green.main}>{data?.username}</Typography> </Typography>
             <Typography variant='extraLarge'>{data?.intro}</Typography>
-            <Box sx={{display:'flex', }}>
+            <Box sx={{display:'flex', }} >
               <Typography variant='extraLarge'>
                 {data?.yearsOfExperience}
               </Typography>
-              <Box>
-                <Typography >
+              <Box display={'flex'} flexDirection={'column'} justifyContent={'center'} ml={1}>
+                <Typography variant='labelSmall' >
                   Years
                 </Typography>
-                <Typography>
+                <Typography variant='labelSmall'>
                   of
                 </Typography>
-                <Typography>
+                <Typography variant='labelSmall'>
                   Experience
                 </Typography>
               </Box>
