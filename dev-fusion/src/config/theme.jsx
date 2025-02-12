@@ -20,7 +20,14 @@ let theme = createTheme({
         },
         green:{
             main: "#67E6AE"
-        }
+        },
+        overrides: {
+            MuiButton: {
+              raisedPrimary: {
+                color: '#000000',
+              },
+            },
+          }
     }
 
 })

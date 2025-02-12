@@ -1,4 +1,4 @@
-import { Box, Grid2, Typography } from '@mui/material'
+import { Box, Button, Grid2, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
 import linkdIcon from '../../assets/icons/linkdinIcon.svg'
 import githubIcon from '../../assets/icons/github.svg'
@@ -46,7 +46,8 @@ const Home = () => {
           <Grid2 item size={{xs:12, md:8}} padding={{xs:2,md:4, lg:4}} >
             <Typography variant='extraLarge'>Hello, I&apos;m <Typography component={'span'} variant='extraLarge' color={theme.palette.green.main}>{data?.username}</Typography> </Typography>
             <Typography variant='extraLarge'>{data?.intro}</Typography>
-            <Box sx={{display:'flex', marginTop:'20px'}} >
+            <Box sx={{display:'flex', marginTop:'20px', justifyContent:'space-between'}} >
+              <Box sx={{display:'flex', marginTop:'20px'}}>
               <Typography variant='extraLarge'>
                 {data?.yearsOfExperience}
               </Typography>
@@ -60,7 +61,19 @@ const Home = () => {
                 <Typography variant='labelSmall' color={theme.palette.neutral.normal}>
                   Experience
                 </Typography>
+              
               </Box>
+
+              </Box>
+              <Button sx={{
+                border:'1px solid #000000',
+                background:`${theme.palette.neutral.normal}`,
+                color:'#000000',
+                fontFamily:'DM Sans',
+                padding:'10px'
+              }}>
+                Hire Me!
+                </Button>             
             </Box>
           </Grid2>
         </Grid2>
