@@ -39,25 +39,25 @@ const Home = () => {
               <Typography variant='h6' fontWeight= 'bold' textAlign='center' mt={3} >
                 {data?.username}
               </Typography>
-              <Typography textAlign='center'>
+              <Typography variant='h7' textAlign='center'>
                 {data?.role}
               </Typography>
           </Grid2>
           <Grid2 item size={{xs:12, md:8}} padding={{xs:2,md:4, lg:4}} >
             <Typography variant='extraLarge'>Hello, I&apos;m <Typography component={'span'} variant='extraLarge' color={theme.palette.green.main}>{data?.username}</Typography> </Typography>
             <Typography variant='extraLarge'>{data?.intro}</Typography>
-            <Box sx={{display:'flex', }} >
+            <Box sx={{display:'flex', marginTop:'20px'}} >
               <Typography variant='extraLarge'>
                 {data?.yearsOfExperience}
               </Typography>
               <Box display={'flex'} flexDirection={'column'} justifyContent={'center'} ml={1}>
-                <Typography variant='labelSmall' >
+                <Typography variant='labelSmall' color={theme.palette.neutral.normal} >
                   Years
                 </Typography>
-                <Typography variant='labelSmall'>
+                <Typography variant='labelSmall' color={theme.palette.neutral.normal}>
                   of
                 </Typography>
-                <Typography variant='labelSmall'>
+                <Typography variant='labelSmall' color={theme.palette.neutral.normal}>
                   Experience
                 </Typography>
               </Box>

@@ -15,7 +15,7 @@ let theme = createTheme({
         neutral:{
             light:grey[50],
             medium: grey[200],
-            normal: grey[700],
+            normal: "#D1D3D5",
             main: grey[900]
         },
         green:{
@@ -28,12 +28,9 @@ let theme = createTheme({
 
 theme = createTheme(theme,{
     typography:{
-        fontFamily:[
-            'DmSans'
-        ],
+        fontFamily:'DM Sans',
         link:{
             fontSize: '0.8rem',
-            fontFamily:'DmSans',
             [theme.breakpoints.up('md')]:{
                 fontSize:'0.9rem'
             },
@@ -57,19 +54,16 @@ theme = createTheme(theme,{
             fontSize:'0.7rem'
         },
         labelSmall:{
-            fontWeight: '700',
-            fontFamily:'DmSans', 
+            fontWeight: '900',
             [theme.breakpoints.up('xs')]: {
                 fontSize: '0.8rem'
             },
             [theme.breakpoints.up('sm')]: {
-            fontSize: '0.6rem'
+            fontSize: '1rem'
             }
         },
         labelLarge:{
             fontWeight: '700',
-            fontFamily:'DmSans',    
-    // wordWrap: 'break-word',
             [theme.breakpoints.up('xs')]: {
                 fontSize: '20px'
             },
@@ -85,7 +79,6 @@ theme = createTheme(theme,{
         },
         extraLarge:{
             fontWeight: '700',
-            fontFamily:'DmSans',    
             // wordWrap: 'break-word',
             [theme.breakpoints.up('xs')]: {
                 fontSize: '18px'
@@ -97,7 +90,7 @@ theme = createTheme(theme,{
             fontSize: '50px'
             },
             [theme.breakpoints.up('lg')]: {
-            fontSize: '40px'
+            fontSize: '50px'
             }
         }
     }
