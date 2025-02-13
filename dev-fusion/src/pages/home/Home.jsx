@@ -65,15 +65,32 @@ const Home = () => {
               </Box>
 
               </Box>
-              <Button sx={{
+
+              <Box display={'flex'} alignItems={'center'}>
+              <Button 
+                
+              sx={{
                 border:'1px solid #000000',
                 background:`${theme.palette.neutral.normal}`,
                 color:'#000000',
                 fontFamily:'DM Sans',
-                padding:'10px'
+                padding: '10px',
+                paddingX:4,
+                transition: "all 0.3s ease-in-out", // Smooth transition effect
+                transform:"rotateX(20deg)",
+                "&:hover": {
+                    background: "#000000",
+                    color: "#ffffff",
+                    transform: "rotateX(0deg)", // Rotate on hover
+                    "&::after": {
+                        content: '"Download CV"' // Change text on hover
+                    }
+                }
               }}>
                 Hire Me!
                 </Button>             
+
+              </Box>
             </Box>
           </Grid2>
         </Grid2>
