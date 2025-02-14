@@ -4,9 +4,11 @@ import linkdIcon from '../../assets/icons/linkdinIcon.svg'
 import githubIcon from '../../assets/icons/github.svg'
 import profileImage from '../../assets/icons/profile.jpeg'
 import theme from '../../config/theme'
+import { useState } from 'react'
 
 const Home = () => {
 
+  const [hovered, setHovered] = useState(false)
   const data = {
     username:'Saarthak Sharma',
     website:'www.google.com',
@@ -68,8 +70,10 @@ const Home = () => {
 
               <Box display={'flex'} alignItems={'center'}>
               <Button 
+                onMouseEnter={()=> setHovered(true)}
+                onMouseLeave={()=> setHovered(false)}
+                sx={{
                 
-              sx={{
                 border:'1px solid #000000',
                 background:`${theme.palette.neutral.normal}`,
                 color:'#000000',
@@ -77,17 +81,15 @@ const Home = () => {
                 padding: '10px',
                 paddingX:4,
                 transition: "all 0.3s ease-in-out", // Smooth transition effect
-                transform:"rotateX(20deg)",
+                transform:'perspective(300px) rotateX(20deg)',
                 "&:hover": {
                     background: "#000000",
                     color: "#ffffff",
-                    transform: "rotateX(0deg)", // Rotate on hover
-                    "&::after": {
-                        content: '"Download CV"' // Change text on hover
-                    }
+                    transform: "perspective(300px) rotateX(360deg)", // Rotate on hover
                 }
-              }}>
-                Hire Me!
+                }}
+              >
+               {hovered? 'Download CV' : 'Hire Me!'} 
                 </Button>             
 
               </Box>
