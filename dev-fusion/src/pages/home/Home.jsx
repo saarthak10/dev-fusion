@@ -1,4 +1,4 @@
-import { Box, Button, Grid2, Typography } from '@mui/material'
+import { AppBar, Box, Button, Grid2, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
 import linkdIcon from '../../assets/icons/linkdinIcon.svg'
 import githubIcon from '../../assets/icons/github.svg'
@@ -17,6 +17,7 @@ const Home = () => {
     intro: 'Front-end Developer crafting web and mobile solutions with React and Android.',
     yearsOfExperience:'3.8'
   }
+  const pages = ['Home','About','Portfolio', 'Contact', 'Blog']
   return (
       <Box   sx={{ marginLeft:'50px', backgroundColor:`${theme.palette.secondary.main}`, borderTopLeftRadius:'40px'}} display='flex' flexDirection='column' alignItems='center' padding={10}>
         {/* User Details */}
@@ -85,7 +86,7 @@ const Home = () => {
                 "&:hover": {
                     background: "#000000",
                     color: "#ffffff",
-                    transform: "perspective(300px) rotateX(360deg)", // Rotate on hover
+                    transform: "perspective(300px) rotateX(0deg)", // Rotate on hover
                 }
                 }}
               >
@@ -96,6 +97,20 @@ const Home = () => {
             </Box>
           </Grid2>
         </Grid2>
+
+        <Grid2 container bgcolor={theme.palette.primary.main}  borderRadius='20px' width='80%' padding={4} mt={4}>
+                <AppBar>
+
+                  <Menu  sx={{ display: { xs: 'block', md: 'none' } }}
+                  >
+                    {pages.map((item)=>(
+                      <MenuItem key={item}>
+                        <Typography>{item}</Typography>
+                      </MenuItem>
+                    ))}
+                  </Menu>
+                </AppBar>
+        </Grid2>        
 
       </Box>
   )
