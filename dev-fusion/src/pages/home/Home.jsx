@@ -12,6 +12,7 @@ import githubIcon from "../../assets/icons/github.svg";
 import profileImage from "../../assets/icons/profile.jpeg";
 import theme from "../../config/theme";
 import { useRef, useState } from "react";
+import AnimatedText from "../../components/AnimatedText";
 
 const Home = () => {
   const [hovered, setHovered] = useState(false);
@@ -48,6 +49,11 @@ const Home = () => {
     }
   }
   
+    // Animation settings for each Typography component
+    const animationVariants = {
+      hidden: { opacity: 0, y: 20 },
+      visible: { opacity: 1, y: 0 },
+    };
   
   return (
     <Box
@@ -184,7 +190,7 @@ const Home = () => {
                   },
                 }}
               >
-                {hovered ? "Download CV" : "Hire Me!"}
+                {hovered ? "Download CV" : "Download CV"}
               </Button>
             </Box>
           </Box>
@@ -200,38 +206,18 @@ const Home = () => {
         mt={4}
       >
         <AppBar color="transparent" position="static" sx={{border:'none', boxShadow:'none'}}>
-          <Toolbar>
+          <Toolbar sx={{justifyContent:'end'}}>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {pages.map((item) => (
-              <Button key={item.id} sx={{ color: '#000', fontFamily: 'DM Sans'}} onClick={()=> handleHeaderClick(item)}>
+              <Button key={item.id} sx={{ color: '#000', fontFamily: 'DM Sans', fontWeight:'bold'}} onClick={()=> handleHeaderClick(item)}>
                 {item.title}
               </Button>
             ))}
           </Box>
-           
           </Toolbar>
         </AppBar>
 
-        <Grid2 size={{xs: 12}} display={'flex'} flexDirection={'column'}>
-          
-
-          <Typography variant="labelLarge">Crafting Experiences</Typography>
-          
-          
-          <Typography variant="labelLarge">I turn raw ideas</Typography>
-          
-          <Typography variant="labelLarge">
-          <Typography
-              component={"span"}
-              variant="labelLarge"
-              color={theme.palette.green.main}
-            >
-              Into engaging
-            </Typography>{" "}
-            
-            , insight-driven frontends</Typography>
-
-        </Grid2>
+        <AnimatedText />
       </Grid2>
     </Box>
   );
