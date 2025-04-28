@@ -13,6 +13,7 @@ import profileImage from "../../assets/icons/profile.jpeg";
 import theme from "../../config/theme";
 import { useRef, useState } from "react";
 import AnimatedText from "../../components/AnimatedText";
+import SkillsBox from "../../components/SkillsBox";
 
 const Home = () => {
   const [hovered, setHovered] = useState(false);
@@ -28,6 +29,14 @@ const Home = () => {
       "Front-end Developer crafting web and mobile solutions with React and Android.",
     yearsOfExperience: "3.8",
   };
+
+  const skills = [
+    {
+      image:'',
+      title:'',
+      progress:''
+    }
+  ]
   const pages = [{id:1, title:"Home"},{id:2, title:"About"} ,{id:3,title:"Projects"} ,{id:4, title: "Contact"},{id:5, title:"Blog"} ];
   
   const handleHeaderClick = ({title})=>{
@@ -209,15 +218,32 @@ const Home = () => {
           <Toolbar sx={{justifyContent:'end'}}>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {pages.map((item) => (
-              <Button key={item.id} sx={{ color: '#000', fontFamily: 'DM Sans', fontWeight:'bold'}} onClick={()=> handleHeaderClick(item)}>
+              <Button key={item.id} sx={{ color: '#000', fontFamily: 'DM Sans', fontWeight:'700'}} onClick={()=> handleHeaderClick(item)}>
                 {item.title}
               </Button>
             ))}
           </Box>
           </Toolbar>
         </AppBar>
+        <Grid2 size={{ xs: 12, md: 12 }} textAlign={'center'}  >
+          <AnimatedText />
+        </Grid2>    
 
-        <AnimatedText />
+        <Grid2>
+            <Typography>
+              Skills
+            </Typography>
+            {skills.map((item)=>{
+              <SkillsBox
+                title={item.title}
+                img={item.image}
+                progress={item.progress}
+              
+              />
+
+            })}
+          </Grid2>    
+
       </Grid2>
     </Box>
   );

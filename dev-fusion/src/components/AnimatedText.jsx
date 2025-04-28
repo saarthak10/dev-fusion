@@ -12,16 +12,16 @@ const AnimatedText = () => {
     };
       
   return (
-    <Grid2 size={{xs: 12}} display={'flex'} flexDirection={'column'} initial="hidden"
+    <Grid2 display={'flex'} flexDirection={'column'} initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }} // Triggers when 20% is in view
+        viewport={{ once: true, amount: 0.5 }} // Triggers when 20% is in view
         transition={{ staggerChildren: 0.3 }} // Adds staggered delay for child animations
     >
         <motion.div 
             variants={animationVariants}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
         
         >
           <Typography variant="labelLarge">Crafting Experiences</Typography>
@@ -30,7 +30,7 @@ const AnimatedText = () => {
               variants={animationVariants}
               initial="hidden"
               animate="visible"
-              transition={{ duration: 0.6, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
         >
           <Typography variant="labelLarge">I turn raw ideas</Typography>
         </motion.div>
@@ -39,7 +39,7 @@ const AnimatedText = () => {
              variants={animationVariants}
              initial="hidden"
              animate="visible"
-             transition={{ duration: 0.7, delay: 0.9 }}
+             transition={{ duration: 0.9, delay: 0.9 }}
         >  
           <Typography variant="labelLarge">
           <Typography
